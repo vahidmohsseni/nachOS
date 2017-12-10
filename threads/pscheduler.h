@@ -6,31 +6,25 @@
 // All rights reserved.  See copyright.h for copyright notice and limitation 
 // of liability and disclaimer of warranty provisions.
 
-#ifndef SCHEDULER_H
-#define SCHEDULER_H
+#ifndef PSCHEDULER_H
+#define PSCHEDULER_H
 
 #include "copyright.h"
 #include "list.h"
 #include "thread.h"
+#include "scheduler.h"
 
 // The following class defines the scheduler/dispatcher abstraction -- 
 // the data structures and operations needed to keep track of which 
 // thread is running, and which threads are ready but not running.
 
-class Scheduler {
+class PScheduler : public Scheduler {
   public:
-    Scheduler();			// Initialize list of ready threads 
-    ~Scheduler();			// De-allocate ready list
+    PScheduler();			// Initialize list of ready threads 
+    ~PScheduler();			// De-allocate ready list
 
-    virtual void ReadyToRun(Thread* thread);	// Thread can be dispatched.
-    virtual Thread* FindNextToRun();		// Dequeue first thread on the ready 
-					// list, if any, and return thread.
-    virtual void Run(Thread* nextThread);	// Cause nextThread to start running
-    virtual void Print();			// Print contents of ready list
-    
-  protected:
-    List *readyList;  		// queue of threads that are ready to run,
-				// but not running
+    void ReadyToRun(Thread* thread);	// Thread can be dispatched.
+    Thread* FindNextToRun();		// Dequeue first thread on the ready
 };
 
-#endif // SCHEDULER_H
+#endif // PSCHEDULER_H
