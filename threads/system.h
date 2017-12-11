@@ -13,9 +13,10 @@
 #include "thread.h"
 #include "scheduler.h"
 #include "interrupt.h"
+#include "pqscheduler.h"
+#include "sjfscheduler.h"
 #include "stats.h"
 #include "timer.h"
-
 // Initialization and cleanup routines
 extern void Initialize(int argc, char **argv); 	// Initialization,
 						// called before anything else

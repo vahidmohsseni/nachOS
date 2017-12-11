@@ -39,7 +39,7 @@
 
 #include "copyright.h"
 #include "utility.h"
-
+#include "ctime"
 #ifdef USER_PROGRAM
 #include "machine.h"
 #include "addrspace.h"
@@ -81,6 +81,10 @@ class Thread {
     int machineState[MachineStateSize];  // all registers except for stackTop
 
   public:
+    int timejobdone;
+    int startTime;
+    int finishTime;
+    int priority;
     Thread(char* debugName);		// initialize a Thread 
     ~Thread(); 				// deallocate a Thread
 					// NOTE -- thread being deleted
