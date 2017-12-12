@@ -1,9 +1,4 @@
-/*
- * SJFScheduler.h
- *
- *  Created on: Dec 9, 2017
- *      Author: newsha
- */
+
 
 #ifndef THREADS_SJFSCHEDULER_H_
 #define THREADS_SJFSCHEDULER_H_
@@ -15,8 +10,8 @@ class SJFScheduler:public Scheduler {
 public:
 	SJFScheduler();
 	virtual ~SJFScheduler();
-	void ReadyToRun(Thread* thread);	// Thread can be dispatched.
-	Thread* FindNextToRun();		// Dequeue first thread on the ready
+	void ReadyToRun(Thread* thread);
+	Thread* FindNextToRun();
 	void Run(Thread* nextThread);
 private:
 	List *SJFreadyList;
