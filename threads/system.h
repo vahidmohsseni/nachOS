@@ -15,6 +15,7 @@
 #include "interrupt.h"
 #include "pqscheduler.h"
 #include "sjfscheduler.h"
+#include "mlqscheduler.h"
 #include "stats.h"
 #include "timer.h"
 // Initialization and cleanup routines
