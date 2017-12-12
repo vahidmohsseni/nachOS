@@ -25,8 +25,7 @@ int testnum = 1;
 //	purposes.
 //----------------------------------------------------------------------
 
-void
-SimpleThread1pq(int which)
+void SimpleThread1pq(int which)
 {
     int num;
     for (num = 0; num < 5; num++) {
@@ -34,8 +33,7 @@ SimpleThread1pq(int which)
         currentThread->Yield();
     }
 }
-void
-SimpleThread2pq(int which)
+void SimpleThread2pq(int which)
 {
     int num;
     for (num = 0; num < 5; num++) {
@@ -43,26 +41,24 @@ SimpleThread2pq(int which)
         currentThread->Yield();
     }
 }
-void
-SimpleThread(int which)
+void SimpleThread(int which)
 {
     int num,j=0;
 
     // delay(2000);
     for (num = 0; num < 10; num++) {
         for (long int i=0;i<2000000;i++){j++;}
-        printf("*** simpleThread1 thread %d looped %d times \n ", which, num);
+        printf("*** simpleThread0 thread %d looped %d times \n ", which, num);
 
         currentThread->Yield();
     }
     //printf("*** thread %d looped %d times , time =%d\n ", which, num,currentThread->finishTime);
 }
-void
-SimpleThread1(int which)
+void SimpleThread1(int which)
 {
     int num,j=0;
 
-    // delay(2000);
+    // delay(3000);
     for (num = 0; num < 10; num++) {
         for (long int i=0;i<3000000;i++){j++;}
         printf("*** simpleThread1 thread %d looped %d times \n ", which, num);
@@ -72,12 +68,11 @@ SimpleThread1(int which)
     //printf("*** thread %d looped %d times , time =%d\n ", which, num,currentThread->finishTime);
 }
 
-void
-SimpleThread2(int which)
+void SimpleThread2(int which)
 {
     int num,j=0;
 
-    // delay(2000);
+    // delay(4000);
     for (num = 0; num < 10; num++) {
         for (long int i=0;i<4000000;i++){j++;}
         printf("*** simpleThread2 thread %d looped %d times\n ", which, num);
@@ -86,17 +81,15 @@ SimpleThread2(int which)
     }
     //printf("*** thread %d looped %d times , time =%d\n ", which, num,currentThread->finishTime);
 }
-void
-SimpleThread3(int which)
+void SimpleThread3(int which)
 {
     int num,j=0;
-    // delay(2000);
+    // delay(5000);
     for (num = 0; num < 10; num++) {
         for (long int i=0;i<5000000;i++){j++;}
         printf("*** simpleThread3 thread %d looped %d times\n ", which, num);
         currentThread->Yield();
     }
-    //printf("*** thread %d looped %d times , time =%d\n ", which, num,currentThread->finishTime);
 }
 //----------------------------------------------------------------------
 // ThreadTest1
