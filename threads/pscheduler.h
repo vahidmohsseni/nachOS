@@ -13,6 +13,8 @@
 #include "list.h"
 #include "thread.h"
 #include "scheduler.h"
+#include "system.h"
+
 
 // The following class defines the scheduler/dispatcher abstraction -- 
 // the data structures and operations needed to keep track of which 
@@ -20,8 +22,8 @@
 
 class PScheduler : public Scheduler {
   public:
-    PScheduler();			// Initialize list of ready threads 
-    ~PScheduler();			// De-allocate ready list
+   // PScheduler();			// Initialize list of ready threads 
+  //  ~PScheduler();			// De-allocate ready list
 
     void ReadyToRun(Thread* thread);	// Thread can be dispatched.
     Thread* FindNextToRun();		// Dequeue first thread on the ready
